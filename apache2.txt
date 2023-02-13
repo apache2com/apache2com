@@ -212,3 +212,23 @@ Open the ‘default-ssl.conf’ file to make changes
 #sudo nano default-ssl.conf
 #sudo a2ensite default-ssl.conf
 #systemctl reload apache2
+
+- user groups
+userdel username - remove only user
+userdel -r username - user & home direc
+useradd kasun 
+tail -2 /etc/passwd - checking
+passwd username
+
+sudo groupadd -g 5000 steam
+sudo groupadd -r appusers - create group using GID
+sudo groupmod -n javaapp appusers
+sudo groupmod -g 6000 steam
+sudo groupdel javaapp
+
+sudo usermod -aG wheel kasun
+sudo usermod -G wheel reba
+
+chage -d 0 username
+chage -l username
+chage -E YYYY-MM-DD username - expire account
